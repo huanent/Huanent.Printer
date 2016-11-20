@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Printing;
 using System.Text;
@@ -21,7 +22,9 @@ namespace Huanent.Printer
             LocalPrintServer printServer = new LocalPrintServer();
             var printer = printServer.GetPrintQueue(printerName);
             if (printer == null) throw new Exception("未找到此名称的打印机，请检查windows打印机设置");
-            return new Printer(paperWidth, printer);
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.PrinterSettings.PrinterName = printerName;
+            return new Printer(paperWidth, printDoc);
         }
     }
 }
