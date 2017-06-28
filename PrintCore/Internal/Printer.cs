@@ -21,7 +21,7 @@ namespace PrintCore
         /// <summary>
         /// 打印对象打印宽度(根据英寸换算而来,paperWidth * 3.937)
         /// </summary>
-        public int PaperWidth { get;}
+        public int PaperWidth { get; }
 
         /// <summary>
         /// 初始化机打印对象
@@ -31,11 +31,11 @@ namespace PrintCore
         /// <param name="paperHight">打印纸高度</param>
         internal Printer(string PrinterName, double paperWidth, int? paperHight = null)
         {
-            printDoc.PrinterSettings.PrinterName = PrinterName;
-            printDoc.PrintPage += PrintPageDetails;
-            printDoc.DefaultPageSettings.PaperSize.Height = paperHight ?? 1000;
             //3.937为一个打印单位(打印单位:80,58)
             PaperWidth = Decimal.ToInt32(new decimal(paperWidth * 3.937));
+            printDoc.PrinterSettings.PrinterName = PrinterName;
+            printDoc.PrintPage += PrintPageDetails;
+            printDoc.DefaultPageSettings.PaperSize = new PaperSize("", PaperWidth, paperHight ?? 10000);
         }
 
         void PrintPageDetails(object sender, PrintPageEventArgs e)
@@ -44,7 +44,7 @@ namespace PrintCore
             {
                 foreach (var item in _printUnits)
                 {
-                    var f = new RectangleF(item.X, item.Y, PaperWidth, item.Font.Size);
+                    var f = new RectangleF(item.X, item.Y, PaperWidth, item.Font.Size * 2);
                     var stringFormat = StringFormat.GenericDefault;
                     stringFormat.Alignment = item.Alignment;
                     e.Graphics.DrawString(item.Content, item.Font, Brushes.Black, f, stringFormat);
