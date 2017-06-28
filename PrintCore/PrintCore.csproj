@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6830F420-79D9-4B2F-9F9A-2A509F5FA3C7}</ProjectGuid>
+    <ProjectGuid>{2251E0F8-74E9-4A66-B04C-9FB08E3245E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Huanent.Printer</RootNamespace>
-    <AssemblyName>Huanent.Printer</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>PrintCore</RootNamespace>
+    <AssemblyName>PrintCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\FontHelper.cs" />
     <Compile Include="IPrinter.cs" />
-    <Compile Include="Printer.cs" />
+    <Compile Include="Internal\Printer.cs" />
     <Compile Include="PrinterFactory.cs" />
+    <Compile Include="Helper\PrintQueueHelper.cs" />
+    <Compile Include="Models\PrintUnit.cs" />
+    <Compile Include="Models\PrintWidth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
