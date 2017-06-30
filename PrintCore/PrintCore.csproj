@@ -46,6 +46,7 @@
     <Compile Include="Helper\FontHelper.cs" />
     <Compile Include="IPrinter.cs" />
     <Compile Include="Internal\Printer.cs" />
+    <Compile Include="Models\UnitType.cs" />
     <Compile Include="PrinterFactory.cs" />
     <Compile Include="Helper\PrintQueueHelper.cs" />
     <Compile Include="Models\PrintUnit.cs" />

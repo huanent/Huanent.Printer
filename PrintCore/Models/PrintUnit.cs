@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -9,10 +10,14 @@ namespace PrintCore
 {
     public class PrintUnit
     {
+        /// <summary>
+        /// UnitType为图片类型时传图片的路径
+        /// </summary>
         public string Content { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
         public Font Font { get; set; }
         public StringAlignment Alignment { get; set; }
+        public UnitType UnitType { get; set; }
     }
 }

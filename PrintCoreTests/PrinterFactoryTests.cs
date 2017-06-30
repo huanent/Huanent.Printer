@@ -12,7 +12,7 @@ namespace PrintCore.Tests
     public class PrinterFactoryTests
     {
         [TestMethod()]
-        public void GetPritnterTest()
+        public void PrintText()
         {
             string printName = "Microsoft XPS Document Writer";
             var print = PrinterFactory.GetPrinter(printName, PrintWidth.Print80mm);
@@ -22,6 +22,21 @@ namespace PrintCore.Tests
                     Content ="测试文本",
                     Y =10,
                     Font =new Font("黑体",12)
+                }
+            });
+        }
+
+        [TestMethod()]
+        public void PrintImg()
+        {
+            string printName = "Microsoft XPS Document Writer";
+            var print = PrinterFactory.GetPrinter(printName, PrintWidth.Print58mm);
+            print.Print(new PrintUnit[] {
+                new PrintUnit{
+                    Alignment =StringAlignment.Center,
+                    Content ="1.jpg",
+                    Y =10,
+                    UnitType=Models.UnitType.Image
                 }
             });
         }
