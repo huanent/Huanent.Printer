@@ -32,7 +32,7 @@ namespace PrintCore
         internal Printer(string PrinterName, double paperWidth, int? paperHight = null)
         {
             //3.937为一个打印单位(打印单位:80,58)
-            PaperWidth = Decimal.ToInt32(new decimal(paperWidth * 3.937));
+            PaperWidth = Decimal.ToInt32(Math.Ceiling(new decimal(paperWidth * 3.937)));
             printDoc.PrinterSettings.PrinterName = PrinterName;
             printDoc.PrintPage += PrintPageDetails;
             printDoc.DefaultPageSettings.PaperSize = new PaperSize("", PaperWidth, paperHight ?? 10000);
