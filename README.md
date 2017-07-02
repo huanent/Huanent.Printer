@@ -7,6 +7,7 @@ print.Print(new PrintUnit[] {
     new PrintUnit{
         Alignment =StringAlignment.Center,
         Content ="测试文本",
+        UnitWidth=100,
         Y =10,
         Font =new Font("黑体",12)
     }

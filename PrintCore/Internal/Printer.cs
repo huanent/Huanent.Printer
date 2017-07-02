@@ -44,22 +44,23 @@ namespace PrintCore
             {
                 foreach (var item in _printUnits)
                 {
+                    int unitWidth = item.UnitWidth == 0 ? PaperWidth : item.UnitWidth;
                     switch (item.UnitType)
                     {
                         case Models.UnitType.Text:
-                            var f = new RectangleF(item.X, item.Y, PaperWidth, item.Font.Size * 2);
+                            var f = new RectangleF(item.X, item.Y, unitWidth, item.Font.Size * 2);
                             var stringFormat = StringFormat.GenericDefault;
                             stringFormat.Alignment = item.Alignment;
                             e.Graphics.DrawString(item.Content, item.Font, Brushes.Black, f, stringFormat);
                             break;
                         case Models.UnitType.Image:
                             var img = new Bitmap(item.Content);
-                            e.Graphics.DrawImage(img,item.X,item.Y);
+                            e.Graphics.DrawImage(img, item.X, item.Y);
                             break;
                         default:
                             break;
                     }
-                   
+
                 }
             }
         }
