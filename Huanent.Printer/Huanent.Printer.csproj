@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <Version>1.0.3</Version>
+    <PackageProjectUrl>https://github.com/huanent/Huanent.Printer</PackageProjectUrl>
+    <Authors>huanent</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Printing" />
+  </ItemGroup>
+
+</Project>

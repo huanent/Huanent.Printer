@@ -3,14 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintCore", "PrintCore\PrintCore.csproj", "{2251E0F8-74E9-4A66-B04C-9FB08E3245E6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution item", "solution item", "{BBEAE50A-0958-426F-89EC-20196B5C32A3}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintCoreTests", "PrintCoreTests\PrintCoreTests.csproj", "{DC5089C2-174D-4B04-B5D8-D75C5183FD4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Huanent.Printer", "Huanent.Printer\Huanent.Printer.csproj", "{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,14 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2251E0F8-74E9-4A66-B04C-9FB08E3245E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2251E0F8-74E9-4A66-B04C-9FB08E3245E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2251E0F8-74E9-4A66-B04C-9FB08E3245E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2251E0F8-74E9-4A66-B04C-9FB08E3245E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC5089C2-174D-4B04-B5D8-D75C5183FD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC5089C2-174D-4B04-B5D8-D75C5183FD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC5089C2-174D-4B04-B5D8-D75C5183FD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC5089C2-174D-4B04-B5D8-D75C5183FD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
