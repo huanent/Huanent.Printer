@@ -48,7 +48,7 @@ namespace PrintCore
                     switch (item.UnitType)
                     {
                         case Models.UnitType.Text:
-                            var f = new RectangleF(item.X, item.Y, unitWidth, item.Font.Size * 2);
+                            var f = new RectangleF(item.X, item.Y, unitWidth, (int)Math.Ceiling(item.Font.Size * 1.5));
                             var stringFormat = StringFormat.GenericDefault;
                             stringFormat.Alignment = item.Alignment;
                             e.Graphics.DrawString(item.Content, item.Font, Brushes.Black, f, stringFormat);
