@@ -8,6 +8,11 @@
     <PackageIconUrl>https://s.gravatar.com/avatar/7991b51c75f1b60cfbb6595315821c69?s=400</PackageIconUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net40\Huanent.Printer.xml</DocumentationFile>
+    <NoWarn>1701;1702;1705;CS1591</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System.Printing" />
   </ItemGroup>

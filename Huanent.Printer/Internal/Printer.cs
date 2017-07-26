@@ -27,11 +27,11 @@ namespace PrintCore
         /// 初始化机打印对象
         /// </summary>
         /// <param name="PrinterName">打印机名称</param>
-        /// <param name="paperWidth">打印纸宽度,一般为80,58,76</param>
+        /// <param name="paperWidth">打印纸宽度</param>
         /// <param name="paperHight">打印纸高度</param>
         internal Printer(string PrinterName, double paperWidth, int? paperHight = null)
         {
-            //3.937为一个打印单位(打印单位:80,58)
+            //3.937为一个打印单位(打印单位:80(实际宽度72.1),58（实际宽度48）)
             PaperWidth = Decimal.ToInt32(Math.Ceiling(new decimal(paperWidth * 3.937)));
             printDoc.PrinterSettings.PrinterName = PrinterName;
             printDoc.PrintPage += PrintPageDetails;
@@ -51,7 +51,7 @@ namespace PrintCore
                             var f = new RectangleF(item.X, item.Y, unitWidth, (int)Math.Ceiling(item.Font.Size * 1.5));
                             var stringFormat = StringFormat.GenericDefault;
                             stringFormat.Alignment = item.Alignment;
-                            e.Graphics.DrawString(item.Content, item.Font, Brushes.Black, f, stringFormat);
+                            e.Graphics.DrawString(item.Content, item.Font, new SolidBrush(Color.Black), f, stringFormat);
                             break;
                         case Models.UnitType.Image:
                             var img = new Bitmap(item.Content);
