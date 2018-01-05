@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace PrintCore
 {
-    public enum PrintWidth
+    public enum PaperWidth
     {
         /// <summary>
-        /// 80打印机
+        /// 80mm
         /// </summary>
-        Print80mm = 80,
+        Paper80mm = 80,
         /// <summary>
-        /// 58打印机
+        /// 76mm
         /// </summary>
-        Print58mm = 58
+        Paper76mm = 76,
+        /// <summary>
+        /// 58mm
+        /// </summary>
+        Paper58mm = 58
     }
 }

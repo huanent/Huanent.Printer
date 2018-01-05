@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution item", "solution item", "{BBEAE50A-0958-426F-89EC-20196B5C32A3}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution item", "solution i
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Huanent.Printer", "Huanent.Printer\Huanent.Printer.csproj", "{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huanent.PrinterTest", "Huanent.PrinterTest\Huanent.PrinterTest.csproj", "{6B95CD99-56FF-4588-8545-107579ADEF6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +22,15 @@ Global
 		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EDAAA01-77EA-41D6-8378-42CFFEE7BC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B95CD99-56FF-4588-8545-107579ADEF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B95CD99-56FF-4588-8545-107579ADEF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B95CD99-56FF-4588-8545-107579ADEF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B95CD99-56FF-4588-8545-107579ADEF6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F58EFA8F-86CE-409E-A187-AABA28C6B50D}
 	EndGlobalSection
 EndGlobal

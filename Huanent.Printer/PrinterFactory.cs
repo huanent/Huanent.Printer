@@ -8,26 +8,27 @@ namespace PrintCore
 {
     public static class PrinterFactory
     {
-        /// <summary>
-        /// 获取打印对象
-        /// </summary>
-        /// <param name="printName">打印机名称</param>
-        /// <param name="printWidth">打印纸宽度80,58,76</param>
-        /// <returns></returns>
-        public static Printer GetPrinter(string printName, PrintWidth printWidth)
+        public static Printer GetPrinter(string printerName, double paperWidth, int? pagerHeight = null)
         {
-            if(string.IsNullOrEmpty(printName)) throw new ArgumentException(nameof(printName));
+            if (string.IsNullOrEmpty(printerName)) throw new ArgumentException(nameof(printerName));
+            return new Printer(printerName, paperWidth, pagerHeight ?? 10000);
+        }
 
-            switch (printWidth)
+        public static Printer GetPrinter(string printerName, PaperWidth paperWidth, int? pagerHeight = null)
+        {
+            switch (paperWidth)
             {
-                case PrintWidth.Print80mm:
+                case PaperWidth.Paper80mm:
                     //80打印纸扣去两边内距实际可打的宽度为72.1
-                    return new Printer(printName, 72.1);
-                case PrintWidth.Print58mm:
+                    return GetPrinter(printerName, 72.1, pagerHeight);
+                case PaperWidth.Paper76mm:
+                    //76打印纸扣去两边内距实际可打的宽度为63.5
+                    return GetPrinter(printerName, 63.5, pagerHeight);
+                case PaperWidth.Paper58mm:
                     //58打印纸扣去两边内距实际可打的宽度为48
-                    return new Printer(printName, 48);
+                    return GetPrinter(printerName, 48, pagerHeight);
                 default:
-                    throw new ArgumentException(nameof(printWidth));
+                    throw new ArgumentException(nameof(paperWidth));
             }
 
         }
