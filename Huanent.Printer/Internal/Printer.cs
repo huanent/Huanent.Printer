@@ -79,7 +79,7 @@ namespace PrintCore
             _printActions.Add((g) =>
             {
                 float contentWidth = width == 1 ? _paperWidth * (1 - offset) : width * _paperWidth;
-                var (newContent, rowNum) = ContentWarp(content, fontSize, contentWidth);
+                string newContent = ContentWarp(content, fontSize, contentWidth, out var rowNum);
                 var font = new Font(_fontName, (int)fontSize, FontStyle.Regular);
                 var point = new PointF(offset * _paperWidth, _currentheight);
                 var size = new SizeF(contentWidth, (int)fontSize * _lineHeightProportion * rowNum);
@@ -148,14 +148,14 @@ namespace PrintCore
         /// <param name="fontSize">文字大小</param>
         /// <param name="width">内容区宽度</param>
         /// <returns>行数</returns>
-        static (string newContent, int rowNum) ContentWarp(string content, FontSize fontSize, float width)
+        static string ContentWarp(string content, FontSize fontSize, float width, out int row)
         {
             content = content.Replace(Environment.NewLine, string.Empty);
 
             //0.7282 字符比例
             var builder = new StringBuilder();
             float nowWidth = 0;
-            int row = 1;
+            row = 1;
             foreach (char item in content)
             {
                 int code = Convert.ToInt32(item);
@@ -169,7 +169,7 @@ namespace PrintCore
                 }
                 builder.Append(item);
             }
-            return (builder.ToString(), row);
+            return builder.ToString();
         }
 
         #endregion

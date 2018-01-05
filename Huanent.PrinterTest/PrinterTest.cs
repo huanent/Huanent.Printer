@@ -11,6 +11,7 @@ namespace Huanent.PrinterTest
         [TestMethod]
         public void FinishTetst()
         {
+            PrintQueueHelper.GetPrintQueueName();
             var printer = PrinterFactory.GetPrinter("Microsoft XPS Document Writer", PaperWidth.Paper80mm);
             printer.NewRow();
             printer.NewRow();
