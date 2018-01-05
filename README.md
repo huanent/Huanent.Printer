@@ -64,4 +64,5 @@ printer.Finish();
 
 ```
 最终成品为下图
+
 ![](https://github.com/huanent/Huanent.Printer/blob/master/docs/img/bill.png)
