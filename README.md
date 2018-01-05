@@ -1,5 +1,5 @@
 # 旧版本文档
-[1.0版本文档]()
+[1.1版本文档](https://github.com/huanent/Huanent.Printer/blob/master/docs/1.1.md)
 
 # 当前版本
 
@@ -64,4 +64,4 @@ printer.Finish();
 
 ```
 最终成品为下图
-![]()
+![](https://github.com/huanent/Huanent.Printer/blob/master/docs/img/bill.png)
