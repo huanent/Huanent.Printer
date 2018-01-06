@@ -100,6 +100,7 @@ namespace PrintCore
             _printDoc.Print();
             _printDoc.Dispose();
             _printDoc = new PrintDocument();
+            _printActions.Clear();
         }
 
         public void PrintImage(Image image, StringAlignment stringAlignment = StringAlignment.Near)

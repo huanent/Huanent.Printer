@@ -9,9 +9,8 @@ namespace Huanent.PrinterTest
     public class PrinterTest
     {
         [TestMethod]
-        public void FinishTetst()
+        public void FinishTest()
         {
-            PrintQueueHelper.GetPrintQueueName();
             var printer = PrinterFactory.GetPrinter("Microsoft XPS Document Writer", PaperWidth.Paper80mm);
             printer.NewRow();
             printer.NewRow();
@@ -20,7 +19,7 @@ namespace Huanent.PrinterTest
             printer.NewRow();
             printer.NewRow();
             printer.PrintText("操作员：张三");
-            printer.PrintText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), stringAlignment: StringAlignment.Far);
+            printer.PrintText(DateTime.Now.ToString("HH:mm:ss"), stringAlignment: StringAlignment.Far);
             printer.NewRow();
             printer.PrintLine();
             printer.NewRow();
@@ -46,11 +45,35 @@ namespace Huanent.PrinterTest
             printer.NewRow();
             var bitmap = new Bitmap("qr.png");
             printer.PrintImage(bitmap, StringAlignment.Center);
-            printer.PrintText("关注超市->");
             printer.NewRow();
             printer.PrintLine();
             printer.NewRow();
             printer.PrintText("感谢光临，欢迎下次再来！", stringAlignment: StringAlignment.Center);
+            printer.NewRow();
+            printer.Finish();
+        }
+
+        [TestMethod]
+        public void TextStringAlignmentTest()
+        {
+            var printer = PrinterFactory.GetPrinter("Microsoft XPS Document Writer", PaperWidth.Paper80mm);
+            printer.PrintText("正", Printer.Models.FontSize.Huge);
+            printer.NewRow();
+            printer.PrintText("正");
+            printer.NewRow();
+            printer.PrintText("正", Printer.Models.FontSize.micro);
+            printer.NewRow();
+            printer.Finish();
+        }
+
+        [TestMethod]
+        public void PrintImageTest()
+        {
+            var printer = PrinterFactory.GetPrinter("Microsoft XPS Document Writer", PaperWidth.Paper80mm);
+            printer.PrintText("一二三四五六七八", width: 0.3f);
+            printer.PrintText("一二三四五六七八", width: 0.2f, offset: 0.4f);
+            printer.NewRow();
+            printer.PrintText("我是新的行");
             printer.NewRow();
             printer.Finish();
         }

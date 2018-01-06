@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net40</TargetFramework>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <PackageProjectUrl>https://github.com/huanent/Huanent.Printer</PackageProjectUrl>
     <Authors>huanent</Authors>
     <PackageIconUrl>https://s.gravatar.com/avatar/7991b51c75f1b60cfbb6595315821c69?s=400</PackageIconUrl>
