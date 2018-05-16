@@ -66,3 +66,5 @@ printer.Finish();
 最终成品为下图
 
 ![](https://github.com/huanent/Huanent.Printer/blob/master/docs/img/bill.png)
+
+### 如果此库对您有帮助，帮忙点颗start O(∩_∩)O 如果您的项目中运用到了此库，请告知作者。以便根据用户数量，来决定项目的维护支持程度。
