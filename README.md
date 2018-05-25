@@ -23,7 +23,7 @@ PrintQueueHelper.GetPrintQueueName();
 var printer = PrinterFactory.GetPrinter("Microsoft XPS Document Writer", PaperWidth.Paper80mm);
 printer.NewRow();
 printer.NewRow();
-printer.PrintText("永辉超市", Printer.Models.FontSize.Huge, StringAlignment.Center);
+printer.PrintText("永辉超市", FontSize.Huge, StringAlignment.Center);
 printer.NewRow();
 printer.NewRow();
 printer.NewRow();
